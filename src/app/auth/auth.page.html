@@ -1,0 +1,94 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>{{isLoggin? 'Welcome Back' : 'Create Account'}}</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content padding >
+
+  <!-- <ion-img class="m-b-40" src="http://207.154.195.214/arope/assets/images/logo.png"></ion-img> -->
+
+  <div id="auth-img">
+    <div class="overlay">
+      
+        <ion-toolbar>
+         
+          <ion-title>
+            <ion-img src="assets/images/logo.png" ></ion-img>
+          </ion-title>
+        </ion-toolbar>
+     
+    <!-- <header>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <select name="" id="">
+              <option value="ar">Ar</option>
+              <option value="en">En</option>
+            </select>
+          </ion-col>
+          <ion-col size="10" offset="1">
+            <ion-img src="assets/images/logo.png" ></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </header> -->
+
+    <!-- <ion-segment (ionChange)="onChangeMode()"  value="login">
+      <ion-segment-button value="login">
+        <ion-label>Sign In</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="register">
+        <ion-label>Register</ion-label>
+      </ion-segment-button>
+    </ion-segment> -->
+  
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <ion-grid size.sm="6" offset.sm="3">
+        <ion-row>
+          <ion-col>
+            <h1 class="m-b-30">
+              {{ 'auth.Welcome Back' | translate }}
+            </h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item  class="m-b-20">
+              <ion-label position="floating">{{ 'auth.Username' | translate }}</ion-label>
+              <ion-input  type="name" ngModel name="username" required  #username="ngModel"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!username.valid && username.touched" lines="none">
+              <ion-text color="danger">
+                {{ 'auth.Username Field Is Required' | translate }}
+              </ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">{{ "auth.Password" | translate }}</ion-label>
+              <ion-input type="password" ngModel name="password" required minlength="5" #password="ngModel"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!password.valid && password.touched" lines="none">
+              <ion-text color="danger">
+                {{ 'auth.Password Field Must At Least 5 Leatters.' | translate }}
+              </ion-text>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <ion-col class="m-t-20">
+            <ion-button *ngIf="!isLoggin" type="button" color="primary" expand="block" [disabled]="f.invalid">Register</ion-button>
+            <ion-button *ngIf="isLoggin" type="submit" color="primary" expand="block" [disabled]="f.invalid">{{ 'auth.Sign In' | translate }}</ion-button>
+          </ion-col>
+        </ion-row>
+  
+      </ion-grid>
+  
+     
+    </form>
+  </div>
+</div>
+
+
+</ion-content>

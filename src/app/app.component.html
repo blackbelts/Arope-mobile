@@ -1,0 +1,163 @@
+<ion-app>
+  <ion-menu side="start">
+
+    <ion-content color="dark">
+      <ion-list >
+        <ion-menu-toggle>
+          <ion-item class="item-sperator">
+            <ion-label>{{ 'sidebar.main' | translate }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        
+        <ion-menu-toggle routerLink="/dashboard/yourdashboard">
+          <ion-item  color="dark">
+            <ion-icon name="speedometer" slot="start"></ion-icon>
+            <ion-label>{{ 'sidebar.dashboard' | translate }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+       
+        <ion-menu-toggle routerLink="/auth/profile">
+          <ion-item  color="dark">
+            <ion-icon name="person" slot="start"></ion-icon>
+            <ion-label>{{ 'sidebar.User Profile' | translate }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle  routerLink="/partners">
+          <ion-item  color="dark" >
+            <ion-icon name="people" slot="start"></ion-icon>
+            <ion-label>{{ 'sidebar.Partners' | translate }}  </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+
+        <ion-item  color="dark" (click)="openQuote = !openQuote">
+          <ion-icon name="pricetags" slot="start"></ion-icon>
+          <ion-label>{{ "sidebar.Get A Quote" | translate }}</ion-label>
+          <ion-icon name="arrow-dropup" slot="end" *ngIf="!openQuote"></ion-icon>
+          <ion-icon name="arrow-dropdown" slot="end" *ngIf="openQuote"></ion-icon>
+        </ion-item>
+        
+        <ion-list *ngIf="openQuote">
+          <ion-menu-toggle>
+            <!-- <ion-select interface="action-sheet" placeholder="Select One" #travelerOption (ionChange)="onChange($event)" style="visibility: hidden; position: absolute;">
+              <ion-select-option value="individual">Individual</ion-select-option>
+              <ion-select-option value="family">Family</ion-select-option>
+              <ion-select-option value="group">Group</ion-select-option>
+            </ion-select> -->
+            <ion-item [routerLink]="['/', 'travel-quotation']">
+              <ion-icon name="planet" slot="start"></ion-icon>
+              <ion-label>{{ 'sidebar.Traveler Insurance' | translate }}</ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-icon name="cog" slot="start"></ion-icon>
+              <ion-label>{{ 'sidebar.Motor Insurance' | translate }}</ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-icon name="medical" slot="start"></ion-icon>
+              <ion-label>{{ 'sidebar.Medical Insurance' | translate }}</ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-icon name="person" slot="start"></ion-icon>
+              <ion-label>{{ 'sidebar.Personal Accident' | translate }}</ion-label>
+            </ion-item>
+
+          
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-menu-toggle>
+          <ion-item  color="dark">
+            <ion-icon name="bookmarks" slot="start"></ion-icon>
+            <ion-label>{{ 'sidebar.Insurance Application' | translate }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item  color="dark">
+            <ion-icon name="analytics" slot="start"></ion-icon>
+            <ion-label>{{ 'sidebar.report Claim' | translate }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item  color="dark">
+            <ion-icon name="refresh" slot="start"></ion-icon>
+            <ion-label>{{ 'sidebar.Rnewal Request' | translate }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item  color="dark">
+            <ion-icon name="document" slot="start"></ion-icon>
+            <ion-label>{{ 'sidebar.Endorsement Request' | translate }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+      
+          <ion-item  color="dark" (click)="open = !open">
+            <ion-icon name="pricetags" slot="start"></ion-icon>
+            <ion-label>{{ 'sidebar.My Portfolio' | translate }}</ion-label>
+            <ion-icon name="arrow-dropup" slot="end" *ngIf="!openQuote"></ion-icon>
+          <ion-icon name="arrow-dropdown" slot="end" *ngIf="openQuote"></ion-icon>
+          </ion-item>
+          
+          <ion-list *ngIf="open">
+            <ion-menu-toggle>
+              <ion-item>
+                <ion-icon name="briefcase" slot="start"></ion-icon>
+                <ion-label>{{ "sidebar.My Policies" | translate }}</ion-label>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon name="git-pull-request" slot="start"></ion-icon>
+                <ion-label>{{ "sidebar.My Claims" | translate }}</ion-label>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon name="stopwatch" slot="start"></ion-icon>
+                <ion-label>{{ 'sidebar.My Outstanding' | translate }}</ion-label>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon name="cash" slot="start"></ion-icon>
+                <ion-label>{{ "sidebar.My Commission" | translate }}</ion-label>
+              </ion-item>
+
+            
+            </ion-menu-toggle>
+          </ion-list>
+          
+
+        <ion-menu-toggle >
+          <ion-item  color="dark">
+            <ion-icon name="attach" slot="start"></ion-icon>
+            <ion-label>{{ "sidebar.Complaint" | translate }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item  color="dark">
+            <ion-icon name="book" slot="start"></ion-icon>
+            <ion-label>{{ "sidebar.Brochures" | translate }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        
+        <ion-menu-toggle>
+          <ion-item color="dark" (click)="onLogout()">
+            <ion-icon name="exit" slot="start"></ion-icon>
+            <ion-label>{{ "sidebar.Logout" | translate }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+
+
+     
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>

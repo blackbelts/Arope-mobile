@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+
+      <ion-input name="search" (ionInput)="onSearch($event.target.value)" placeholder="search by name" ngModel #search="ngModel"></ion-input>
+    </ion-item>
+    
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content text-center padding>
+  <ion-label *ngIf="alertNotFound"><ion-text color="danger">{{ alertNotFound }}</ion-text></ion-label>
+
+<div *ngIf="!alertNotFound">
+  <ion-virtual-scroll [items]="items">
+
+    
+    <ion-item-sliding  *virtualItem="let item"  #sliding>
+      <ion-card>
+      <ion-item>
+        <ion-thumbnail slot="start">
+            <ion-img src="data:image/png;base64,{{ item.image  }}"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+            <h2>{{ item.display_name }}</h2>
+            <p>{{item.email}}</p>
+
+        </ion-label>
+      </ion-item>
+      
+      <ion-item-options side="end">
+
+       <!-- <ion-item-option color="secondary" (click)="show(item.id)">
+        <ion-icon slot="icon-only" name="eye"></ion-icon>
+     </ion-item-option> -->
+      <ion-item-option (click)="edit(item.id, sliding)">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-item-option>
+     </ion-item-options>
+    </ion-card>
+    </ion-item-sliding>
+
+  
+  </ion-virtual-scroll>
+</div>
+</ion-content>

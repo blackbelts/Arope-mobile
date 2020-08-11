@@ -1,0 +1,68 @@
+$show-image-auth: true;
+$home-image: url(/assets/images/building.jpg);
+$backgroudn-opacity: 0.5;
+
+@mixin easeOut {
+    transition: all 0.5s ease-out;
+}
+
+
+@mixin background {
+    @if $show-image-auth {
+        &#profile-img {
+            background: url(/assets/images/background-img.jpg);
+            background-size: cover;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+
+    //         &:after {
+    //             content: '';
+    //             position: absolute;
+    //             top: 0;
+    //             left: 0;
+    //             width: 100%;
+    //             height: 100%;
+    //             z-index: 0;
+    // background: rgba(68, 68, 68, $backgroudn-opacity);
+    //         }
+        }
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: rgba(68, 68, 68, $backgroudn-opacity);
+}
+
+#profile-img {
+   @include background();
+}
+
+ion-toolbar {
+    --background: transparent;
+}
+
+ion-img {
+    width: 60px;
+    height: auto;
+}
+
+h1 {
+    color: #999;
+}
+
+div.content {
+    background: whitesmoke;
+}
+
+ion-card-title {
+    --background: var(--ion-colo-primary);
+}

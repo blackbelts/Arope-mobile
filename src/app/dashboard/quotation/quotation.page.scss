@@ -1,0 +1,86 @@
+.custom-card {
+    padding: 5px 12px;
+   
+    color: white;
+    height: 25vh;
+    position: relative;
+     overflow: hidden;
+    cursor: pointer;
+     
+
+    ion-label {
+        h2 {
+            font-size: 20px;
+            line-height: 8vh;
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+
+    
+}
+
+.traveller {
+    background: var(--ion-color-primary);
+}
+
+.traveller::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    border-bottom: 40px solid white;
+    border-left: 40px solid  var(--ion-color-primary);;
+    width: 0px;
+    
+    // z-index: -1;
+}
+
+.personal {
+    background: var(--ion-color-secondary);
+}
+
+
+.personal::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    border-bottom: 40px solid white;
+    border-left: 40px solid  var(--ion-color-secondary);;
+    width: 0px;
+    
+    // z-index: -1;
+}
+
+.motor {
+    background: var(--ion-color-success);
+}
+
+
+.motor::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    border-bottom: 40px solid white;
+    border-left: 40px solid  var(--ion-color-success);;
+    width: 0px;
+    
+    // z-index: -1;
+}
+
+.medical {
+    background: var(--ion-color-danger);
+}
+
+
+.medical::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    border-bottom: 40px solid white;
+    border-left: 40px solid  var(--ion-color-danger);;
+    width: 0px;
+    
+    // z-index: -1;
+}

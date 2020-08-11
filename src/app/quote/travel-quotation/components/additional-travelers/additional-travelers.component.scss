@@ -1,0 +1,31 @@
+ion-item.custom-effect {
+    --background: var(--ion-color-light);
+}
+
+.card-title {
+    ion-text {
+       h4 {
+        font-size: 16px;
+        padding: 20px 0 0px 29px;
+        text-align: left;
+        text-decoration: underline;
+        font-weight: 500;
+       }
+    }
+}
+.card-title-primary {
+    ion-text {
+       h4 {
+        font-size: 20px;
+        padding: 20px 0 0px 0px;
+        text-align: left;
+        text-decoration: underline;
+        font-weight: 500;
+       }
+    }
+}
+
+
+ion-list {
+    background: var(--ion-color-light);
+}

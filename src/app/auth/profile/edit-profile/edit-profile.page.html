@@ -1,0 +1,94 @@
+<ion-header>
+  <app-top-header [title]="'Edit Profile'" [mode]="false" [hrefBack]="''"></app-top-header>
+  
+</ion-header>
+
+<ion-content>
+  <form action="#">
+    <ion-grid>
+
+  
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label position="floating">First Name</ion-label>
+            <ion-input name="firstName"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label position="floating">Middle Name</ion-label>
+            <ion-input name="middleName"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label position="floating">Last Name</ion-label>
+            <ion-input name="lastName"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label>Gender</ion-label>
+            <ion-select value="">
+              <ion-select-option value="yes">Male</ion-select-option>
+              <ion-select-option value="no">Female</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label>Date Of Birth</ion-label>
+            <ion-datetime value="1980-02-19" placeholder="Select Date"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label position="floating">Email Address</ion-label>
+            <ion-input name="email" type="email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label position="floating">Phone Number</ion-label>
+            <ion-input name="phone" type="tel"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+
+
+
+  
+    </ion-grid>
+  </form>
+</ion-content>
+
+
+ 
+<ion-footer >
+  <ion-toolbar color="light">
+    <ion-button color="primary" expand="block" (click)="onClick()" size="large">Update Profile
+      
+      <ion-icon name="create" slot="start"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

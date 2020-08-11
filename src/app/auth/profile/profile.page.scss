@@ -1,0 +1,107 @@
+ion-content {
+    overflow-y: scroll;
+}
+
+ion-img {
+    margin: 30px auto 0 auto;
+    width: 80px;
+    height: auto;
+}
+
+ion-avatar {
+    margin: 0 auto;
+}
+
+ion-icon.profile-check {
+    position: relative;
+    top: 6px;
+    color: goldenrod;
+}
+
+h3 {
+    margin-bottom: 2px;
+    margin-left: 13px;
+}
+
+ion-text {
+    font-size: 2rem ;
+    padding: 5px ;
+    background: var(--ion-color-danger-shade) ;
+    border-radius: 10px ;
+    text-shadow: 0 0 black ;
+    box-shadow: 0px 3px 6px 0px rgba(4,17,60,0.5) 
+}
+
+
+ion-card.production {
+    width: 100%;
+    margin: s20px 4px;
+    --background: var(--ion-color-primary);
+    color: white;
+
+    h2.cost {
+        font-size: 2rem;
+        margin-top: 20px;
+        text-shadow: 0 0 black;
+        box-shadow: 0px 3px 6px 0px rgba(4,17,60,0.5);
+
+   
+    }
+
+    ion-icon {
+        font-size: 75px;
+        padding-top: 20px;
+    }
+
+  
+}
+
+ion-card.rate {
+    width: 100%;
+    margin: s20px 4px;
+    --background: var(--ion-color-secondary);
+    color: white;
+
+    h2.cost {
+        font-size: 2rem;
+        margin-top: 20px;
+        text-shadow: 0 0 black;
+        box-shadow: 0px 3px 6px 0px rgba(4,17,60,0.5);
+
+   
+    }
+
+    ion-icon {
+        font-size: 75px;
+        padding-top: 20px;
+    }
+}
+
+ion-card.box {
+    --background: var(--ion-color-light);
+}
+
+
+i.up {
+    color: var(--ion-color-success);
+    position: relative;
+    top: 2px;
+}
+
+i.right {
+    color: yellow;
+    position: relative;
+    top: 2px;
+    padding-left: 5px;
+}
+
+i.down {
+    color: red;
+    position: relative;
+    top: 2px;
+    padding-left: 5px;
+}
+
+ion-label.title-job {
+    color: #999;
+}

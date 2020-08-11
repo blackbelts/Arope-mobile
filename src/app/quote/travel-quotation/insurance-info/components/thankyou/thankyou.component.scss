@@ -1,0 +1,32 @@
+ion-toolbar.top-msg {
+    height: 20vh;
+    text-align: center;
+    line-height: 20vh;
+
+    ion-icon {
+        font-size: 65px;
+        background: var(--ion-color-light);
+        color: var(--ion-color-primary);
+        padding: 15px;
+        border-radius: 50%;
+        margin-top: 15px;
+    }
+}
+
+ion-content {
+    ion-icon {
+        font-size: 40px;
+        color: gold;
+        margin: 20px auto;
+    }
+
+    ion-text {
+        font-size: 25px;
+    }
+
+    p {
+        line-height: 1.5;
+    }
+
+    
+}

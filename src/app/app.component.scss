@@ -1,0 +1,16 @@
+ion-list {
+    background: var(--ion-color-dark);
+    padding-top: 0;
+}
+
+ion-item.item-sperator{
+    --background: var(--ion-color-dark-tint);
+    --color: whitesmoke;
+    height: 35px;
+
+    ion-label {
+
+        margin-left: 5px;
+        margin-top: -2px;
+    }
+}

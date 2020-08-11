@@ -1,0 +1,147 @@
+
+ 
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button class="icon-only">
+          <ion-icon name="people"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+        {{ 'family.title' | translate }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <!-- <ion-icon name="close"></ion-icon> -->
+        <ion-label>Close</ion-label>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content text-center padding>
+
+
+  <form  >
+ 
+      <div >
+        
+        <ion-grid>
+          
+          <ion-row>
+            <ion-col>
+              <ion-label class="card-title-primary">
+                <ion-text color="primary">
+                 <h4>{{ 'family.Primary Travel' | translate }}</h4>
+                </ion-text>
+              </ion-label>
+              <ion-item class="custom-effect">
+                <ion-label>
+                  {{ 'family.Date Of Birth' | translate }}
+                </ion-label>
+
+                <ion-datetime 
+                display-format="MMM DD YYYY" 
+                picker-format="YYYY MMM DD"
+                ></ion-datetime>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-card>
+               
+
+                <ion-label class="card-title">
+                  <ion-text color="primary">
+                   <h4>{{ 'family.Addition Travel' | translate }} #{{ items.length+1  }}</h4>
+                  </ion-text>
+                </ion-label>
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                 
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="12">
+                        <ion-item>
+                          <ion-label>{{ 'family.Relation' | translate }}</ion-label>
+                          <ion-select name="type" #type="ngModel" ngModel required>
+                            <ion-select-option *ngFor="let type of types" [value]="type.value">{{ type.viewValue }}</ion-select-option>
+                          </ion-select>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size="12">
+                        <ion-item>
+                          <ion-label>
+                            {{ 'family.Date Of Birth' | translate }}
+                          </ion-label>
+
+                          <ion-datetime 
+                          name="dob"
+                          ngModel
+                          #dob="ngModel"
+                          
+                          required
+                          display-format="MMM DD YYYY" 
+                          picker-format="YYYY MMM DD"
+                          ></ion-datetime>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                      <ion-col>
+                        
+                        <ion-button type="submit" expand="block" color="secondary" [disabled]="!f.valid">
+                          {{ 'family.Add Additional Travel ' | translate }}
+                    
+                          <ion-icon name="add" slot="start"></ion-icon>
+                        </ion-button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </form>
+              
+              </ion-card>
+            </ion-col>
+          </ion-row>
+
+
+
+        </ion-grid>
+
+
+       
+      </div>
+    
+   
+
+  </form>
+
+ <ion-list *ngIf="items.length > 0">
+   <ion-item *ngFor="let row of items; let i = index" lines="none" class="custom-effect">
+    <ion-label>
+      <h2>Relative Relation: {{ row.type }}</h2>
+      <p>Date Of Birth: {{ row.dob }}</p>
+    </ion-label>
+
+    <ion-button slot="end" fill="clear" size="large" color="light" class="icon-only" (click)="removeRecord(i)">
+      <ion-icon color="medium" name="trash" slot="end"></ion-icon>
+    </ion-button>
+   </ion-item>
+ </ion-list>
+
+</ion-content>
+
+
+
+<ion-footer>
+
+
+
+
+  <ion-toolbar>
+    <ion-button color="primary" expand="block" size="large"  disabled>
+      Done 
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

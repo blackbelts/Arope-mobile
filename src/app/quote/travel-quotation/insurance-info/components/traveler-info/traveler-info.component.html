@@ -1,0 +1,215 @@
+
+  <ion-grid [formGroup]="form">
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label>{{ "form.Nationality" | translate }}</ion-label>
+          <ion-select formControlName="nationality">
+            <ion-select-option value="yes">{{ 'form.Egyptain' | translate }}</ion-select-option>
+            <ion-select-option value="no">{{ 'form.Non Egyptain' | translate }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label position="floating">{{ "form.First Name" | translate }}</ion-label>
+          <ion-input formControlName="firstName" pattern="[a-zA-Z ]*"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!form.get('firstName').valid && form.get('firstName').touched" lines="none">
+          <ion-text color="danger">
+            {{ 'indi.Please Provided A Valid Name' | translate }}
+          </ion-text>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label position="floating">{{ 'form.Middle Name' | translate }}</ion-label>
+          <ion-input formControlName="middleName"  pattern="[a-zA-Z ]*"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!form.get('middleName').valid && form.get('middleName').touched" lines="none">
+          <ion-text color="danger">
+            {{ 'indi.Please Provided A Valid Name' | translate }}
+          </ion-text>
+        </ion-item>
+
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label position="floating">{{ "form.Last Name" | translate }}</ion-label>
+          <ion-input formControlName="lastName"  pattern="[a-zA-Z ]*"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!form.get('lastName').valid && form.get('lastName').touched" lines="none">
+          <ion-text color="danger">
+            {{ 'indi.Please Provided A Valid Name' | translate }}
+          </ion-text>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label>{{ 'form.Gender' | translate }}</ion-label>
+          <ion-select formControlName="gender">
+            <ion-select-option value="yes">{{ "form.Male" | translate }}</ion-select-option>
+            <ion-select-option value="no">{{ "form.Female" | translate }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label>{{ 'form.Date Of Birth' | translate }}</ion-label>
+          <ion-datetime formControlName="dob"  [max]="maxDate" placeholder="{{ 'form.Select Date' | translate }}"></ion-datetime>
+        </ion-item>
+
+
+        <ion-item *ngIf="!form.get('dob').valid && form.get('dob').touched" lines="none">
+          <ion-text color="danger">
+            {{ 'indi.Please Provided A Valid Date Of Your Birth' | translate }}
+          </ion-text>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label position="floating">{{ 'form.Email Address' | translate }}</ion-label>
+          <ion-input formControlName="email" type="email"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!form.get('email').valid && form.get('email').touched" lines="none">
+          <ion-text color="danger">
+            {{ 'indi.Please Provided A Valid Email Address' | translate }}
+          </ion-text>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label position="floating">{{ 'form.Phone Number' | translate }}</ion-label>
+          <ion-input formControlName="phoneNumber" type="tel"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!form.get('phoneNumber').valid && form.get('phoneNumber').touched" lines="none">
+          <ion-text color="danger">
+            {{ 'indi.Please Provided A Valid Phone Number' | translate }}
+          </ion-text>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label position="floating">{{ 'form.National ID' | translate }}</ion-label>
+          <ion-input formControlName="nationalityId"></ion-input>
+        </ion-item>
+
+        
+        <ion-item *ngIf="!form.get('nationalityId').valid && form.get('nationalityId').touched" lines="none">
+          <ion-text color="danger">
+            {{ 'indi.Please Provided A Valid Nationality Number' | translate }}
+          </ion-text>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label position="floating">{{ 'form.Passport Number' | translate }}</ion-label>
+          <ion-input formControlName="id"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!form.get('id').valid && form.get('id').touched" lines="none">
+          <ion-text color="danger">
+            {{ 'indi.Please Provided A Valid Passport Number' | translate }}
+          </ion-text>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label position="floating">{{ 'form.Enter Your Address' | translate }}</ion-label>
+          <ion-input formControlName="address"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!form.get('address').valid && form.get('address').touched" lines="none">
+          <ion-text color="danger">
+            {{ 'indi.Please Provided A Valid Address' | translate }}
+          </ion-text>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label>{{ 'form.Choose a suitable payment method' | translate }}</ion-label>
+          <ion-select formControlName="payment" interface="action-sheet">
+            <ion-select-option value="fawery">{{ 'form.Fawery' | translate }}</ion-select-option>
+            <ion-select-option value="qnp">{{ 'form.QNB'  | translate}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+
+        <ion-item *ngIf="!form.get('payment').valid && form.get('payment').touched" lines="none">
+          <ion-text color="danger">
+            {{ 'indi.Please Provided A Valid Payment Method' | translate }}
+          </ion-text>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label>{{ 'form.I have read and accepted Terms& Conditions.' | translate }}</ion-label>
+          <ion-checkbox slot="start"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label>{{ 'form.all the information is matching with the passport data.' | translate }}</ion-label>
+          <ion-checkbox slot="start"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label>{{ 'form.Yes, I have read the Customer Protection Manual' | translate }}</ion-label>
+          <ion-checkbox slot="start"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>

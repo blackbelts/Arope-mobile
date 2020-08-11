@@ -1,0 +1,350 @@
+
+<ion-header>
+    <app-top-header [title]="title" [mode]="false" [hrefBack]="''"></app-top-header>
+</ion-header>
+
+
+<ion-content >
+
+
+
+<ion-grid>
+
+
+     
+       
+          <ion-row>
+            <ion-col class="ion-text-center">
+              <ion-avatar>
+                <img src="assets/images/user.jpg" alt="">
+              </ion-avatar>
+              <h3>Eslam Elbadry</h3>
+              <ion-label class="title-job">Mobile Developer</ion-label>
+              <ion-icon name="arrow-up-circle" color="primary"></ion-icon>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+
+              <ion-card>
+                <ion-grid>
+              <ion-row>
+                <ion-col  size="4" class="ion-text-center">
+                  <ion-icon class="__app_icon_rate" name="medal"></ion-icon>
+                </ion-col>
+    
+                <ion-col  size="8" class="ion-text-center">
+                  <ion-label class="__app_text">
+                   
+                    {{ 'dashboard.Target' | translate }}
+                  </ion-label>
+                
+                  <ion-label class="__app_text">
+                    <h2 class="__app_text_value">{{ rank }}</h2>
+                  </ion-label>
+                
+    
+                  
+                </ion-col>
+                <!-- <ion-item-divider ></ion-item-divider> -->
+    
+               
+              </ion-row>
+             
+             <div class="is-divider"></div>
+              <ion-row>
+                <ion-col>
+                  <ion-label class="__app_link" [routerLink]="['/', 'dashboard', 'yourdashboard', 'production']"><h2 class="__app_link_readmore">{{ "dashboard.More" | translate }}</h2></ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            </ion-card>
+            </ion-col>
+
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+
+              <ion-card>
+                <ion-grid>
+              <ion-row>
+                <ion-col size="4" class="ion-text-center">
+                  <ion-icon class="__app_icon_production" name="speedometer"></ion-icon>
+                </ion-col>
+    
+                <ion-col size="8" class="ion-text-center">
+                  <ion-label class="__app_text">
+                   
+                    {{ 'dashboard.Production' | translate }}
+                  </ion-label>
+    
+                  <ion-label class="__app_text">
+                    <h2 class="__app_text_value__cash">EGP {{ productionTotal }} </h2>
+                  </ion-label>
+                  
+    
+                  
+                </ion-col>
+                <!-- <ion-item-divider ></ion-item-divider> -->
+    
+               
+              </ion-row>
+              <div class="is-divider"></div>
+              <ion-row>
+                <ion-col>
+                  <ion-label class="__app_link"><h2 class="__app_link_readmore">{{ "dashboard.More" | translate }}</h2></ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            </ion-card>
+            </ion-col>
+
+          </ion-row>
+
+      
+        
+     
+          <ion-row>
+            <ion-card class="barChart ">
+              <ion-card-header class="ion-text-center">
+                
+                  <ion-label class="__app_text">
+                    مقارنة الانتاج 
+                  </ion-label>
+               
+              </ion-card-header>
+              <ion-card-content>
+                <canvas #barCanvas></canvas>
+              </ion-card-content>
+            </ion-card>
+          </ion-row>
+
+
+<!-- 
+          <ion-row>
+            <ion-card class="barChart">
+              <ion-card-content>
+                <canvas #barCanvasLine></canvas>
+              </ion-card-content>
+            </ion-card>
+          </ion-row> -->
+
+
+
+          <ion-row>
+            <ion-card class="barChart">
+              <ion-card-header class="ion-text-center">
+              
+                <ion-label class="__app_text">
+                  مستوى الانتاجية
+                </ion-label>
+             
+            </ion-card-header>
+              <ion-card-content>
+                <canvas #barCanvasLineGroup></canvas>
+              </ion-card-content>
+            </ion-card>
+          </ion-row>
+
+
+
+          <!-- 
+          <ion-row >
+              <ion-col size="">
+                <ion-item lines="none" color="success">
+               
+                  <ion-label>
+                      <h2>العدد: 3</h2>
+                      <p>12,000 جنيه مصرى</p>
+          
+                  </ion-label>
+                </ion-item>
+  
+              </ion-col>
+              <ion-col>
+                <ion-item lines="none" color="warning">
+               
+                  <ion-label>
+                      <h2>العدد: 3</h2>
+                      <p>12,000 جنيه مصرى</p>
+          
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col>
+
+                <ion-item lines="none" color="danger">
+                
+                  <ion-label>
+                      <h2>العدد: 3</h2>
+                      <p>12,000 جنيه مصرى</p>
+          
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+          
+          </ion-row>
+          <ion-row>
+            <ion-col>
+
+          <ion-label>التجديدات</ion-label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row >
+              <ion-col size="">
+                <ion-item lines="none" color="success">
+               
+                  <ion-label>
+                      <h2>العدد: 3</h2>
+                      <p>12,000 جنيه مصرى</p>
+          
+                  </ion-label>
+                </ion-item>
+  
+              </ion-col>
+              <ion-col>
+                <ion-item lines="none" color="warning">
+               
+                  <ion-label>
+                      <h2>العدد: 3</h2>
+                      <p>12,000 جنيه مصرى</p>
+          
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col>
+
+                <ion-item lines="none" color="danger">
+                
+                  <ion-label>
+                      <h2>العدد: 3</h2>
+                      <p>12,000 جنيه مصرى</p>
+          
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+          
+          </ion-row> -->
+
+          <ion-row>
+            <ion-col>
+
+          <ion-label>اقساط تحت التحصيل</ion-label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row *ngFor="let collection of collections; let i=index">
+              <ion-col>
+
+                <ion-card (click)="onClick(collection.ids)">
+                  <ion-grid>
+                <ion-row>
+                  <ion-col  size="4" class="ion-text-center">
+                    <span class="icon"><i class="fas fa-circle fa-4x" [ngClass]="{'green': i==0, 'red': i==2, 'yellow': i==1}"></i></span>
+                    <!-- <ion-icon class="__app_icon_rate" name="medal"></ion-icon> -->
+                  </ion-col>
+      
+                  <ion-col  size="8" class="ion-text-center">
+                    <ion-label class="__app_text">
+                      
+                      العدد
+                    </ion-label>
+                  
+                    <ion-label class="__app_text">
+                      <h2 class="__app_text_value">{{ collection.count }}</h2>
+                    </ion-label>
+                
+  
+             
+                  
+                  </ion-col>
+                  <!-- <ion-item-divider ></ion-item-divider> -->
+      
+                 
+                </ion-row>
+               
+               <div class="is-divider"></div>
+
+                <ion-row>
+                  <ion-col class="ion-no-padding">
+                    <ion-label class="__app_link" ><h2 class="total_cost">التكلفة : {{ collection.total }}</h2></ion-label>
+                  </ion-col>
+                </ion-row>
+
+
+              </ion-grid>
+              </ion-card>
+              
+              </ion-col>
+              <!-- <ion-item-divider ></ion-item-divider> -->
+  
+              
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+  
+                <ion-label>التجديدات</ion-label>
+              </ion-col>
+            </ion-row>
+
+            
+            <ion-row *ngFor="let renew of renews; let i=index">
+              <ion-col>
+
+                <ion-card (click)="onClickRenwals(renew.ids)">
+                  <ion-grid>
+                <ion-row>
+                  <ion-col  size="4" class="ion-text-center">
+                    <span class="icon"><i class="fas fa-circle fa-4x" [ngClass]="{'green': i==0, 'red': i==2, 'yellow': i==1}"></i></span>
+                    <!-- <ion-icon class="__app_icon_rate" name="medal"></ion-icon> -->
+                  </ion-col>
+      
+                  <ion-col  size="8" class="ion-text-center">
+                    <ion-label class="__app_text">
+                      
+                      العدد
+                    </ion-label>
+                  
+                    <ion-label class="__app_text">
+                      <h2 class="__app_text_value">{{ renew.count }}</h2>
+                    </ion-label>
+                
+  
+             
+                  
+                  </ion-col>
+                  <!-- <ion-item-divider ></ion-item-divider> -->
+      
+                 
+                </ion-row>
+               
+               <div class="is-divider"></div>
+
+                <ion-row>
+                  <ion-col class="ion-no-padding">
+                    <ion-label class="__app_link" ><h2 class="total_cost">التكلفة : {{ renew.total }}</h2></ion-label>
+                  </ion-col>
+                </ion-row>
+
+
+              </ion-grid>
+              </ion-card>
+              
+              </ion-col>
+              <!-- <ion-item-divider ></ion-item-divider> -->
+  
+              
+            </ion-row>
+
+
+
+</ion-grid>
+
+
+
+
+</ion-content>

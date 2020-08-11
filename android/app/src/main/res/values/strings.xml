@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Arope</string>
+    <string name="title_activity_main">Arope</string>
+    <string name="package_name">io.eslam.arope</string>
+    <string name="custom_url_scheme">io.eslam.arope</string>
+</resources>

@@ -1,0 +1,23 @@
+<ng-container *ngIf="!isLoading">
+
+<ion-card
+*ngFor="let cover of coversArr; let i = index"
+class="accordion-item"
+>
+  <ion-card-header (click)="toggleSelection(i)" [id]="'header-'+i">
+    <ion-label>
+      <ion-icon name="arrow-dropdown" color="primary" slot="start"></ion-icon>
+    {{ cover.cover }}
+    </ion-label>
+  </ion-card-header>
+
+  <ion-card-content  [id]="'item-'+i" class="accordion-item_cc">
+    <p>
+      {{ cover.limit }}
+    </p>
+  </ion-card-content>
+</ion-card>
+</ng-container>
+
+
+<ion-spinner name="crescent" color="primary" *ngIf="isLoading"></ion-spinner>

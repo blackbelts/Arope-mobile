@@ -1,0 +1,73 @@
+<ion-header>
+  <app-top-header [title]="title" [mode]="false" [hrefBack]="'/travel-quotation'"></app-top-header>
+
+  
+</ion-header>
+
+<ion-content>
+
+  <app-covers [covers]="covers" *ngIf="isShow === 'covers'"></app-covers>
+  <form [formGroup]="form">
+
+    <app-traveler-info [form]="form" *ngIf="isShow === 'info'"></app-traveler-info>
+  </form>
+  <app-thankyou *ngIf="isShow === 'thankyou'"></app-thankyou>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="secondary" text-center>
+  
+     
+          <ion-label class="label-price">
+            <ion-text>{{ 'info.Your Total Quote' | translate }}: EGP {{ totalPrice.toFixed(2) }}</ion-text>
+         </ion-label>
+      
+  </ion-toolbar>
+
+
+  <ion-toolbar color="light" *ngIf="isShow === 'covers'">
+    <ion-button color="primary" expand="block" (click)="goInfo()" size="large">
+      {{ "info.Traveler Info" | translate }}
+      <ion-icon name="arrow-forward" slot="end"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+
+  <ion-toolbar color="light" *ngIf="isShow === 'info'">
+   <ion-grid>
+     <ion-row>
+       <ion-col size="4">
+        <ion-button color="primary" expand="outline" (click)="backCover()" size="large">
+          {{ "info.Back" | translate }}
+          <ion-icon name="arrow-back" slot="start"></ion-icon>
+        </ion-button>
+       </ion-col>
+       <ion-col size="8">
+        <ion-button color="primary" expand="block" (click)="goThankyou()" size="large" [disabled]="!form.valid">
+          {{ "info.Pay" | translate }}
+          <ion-icon name="logo-usd" slot="start"></ion-icon>
+        </ion-button>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+  </ion-toolbar>
+
+  <ion-toolbar color="light" *ngIf="isShow === 'thankyou'">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+         <ion-button color="primary" expand="outline" (click)="backInfo()" size="large">
+          {{ "info.Back" | translate }}
+           <ion-icon name="arrow-back" slot="start"></ion-icon>
+         </ion-button>
+        </ion-col>
+        <ion-col size="8">
+         <ion-button color="primary" expand="block"  size="large">
+            {{ 'info.Dashboard' | translate }}
+           <ion-icon name="speedometer" slot="start"></ion-icon>
+         </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   </ion-toolbar>
+</ion-footer>

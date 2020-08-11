@@ -1,0 +1,88 @@
+<app-top-header [title]="title" [mode]="true" [hrefBack]="'/dashboard/yourdashboard'"></app-top-header>
+
+
+<ion-content >
+
+  <!-- <ngx-datatable
+  [rows]="loadingCollections"
+  [ngClass]="tableStyle"
+  [rowHeight]="'auto'"
+  [headerHeight]="50"
+  [columnMode]="'force'"
+  
+  >
+<ngx-datatable-column name="{{ 'collections.policy_num' | translate }}" [width]="25">
+  <ng-template let-row="row"  ngx-datatable-cell-template>
+    <ion-label>{{ row.policy }}</ion-label>
+  </ng-template>
+  
+</ngx-datatable-column>
+<ngx-datatable-column name="{{ 'collections.customer' | translate }}" [width]="600">
+  <ng-template let-row="row"  ngx-datatable-cell-template let->
+    <ion-label>{{ row.customer }}</ion-label>
+  </ng-template>
+</ngx-datatable-column>
+<ngx-datatable-column name="{{ 'collections.collection_date' | translate }}" [width]="25">
+  <ng-template let-row="row"  ngx-datatable-cell-template>
+    <ion-label>{{ row.collection_date }}</ion-label>
+  </ng-template>
+</ngx-datatable-column>
+
+</ngx-datatable> -->
+
+<ion-grid>
+  <ion-row *ngFor="let collection of loadingCollections">
+    <ion-col>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+           <ion-grid>
+             <ion-row>
+               <ion-col>
+                <ion-label> 
+                  <h4>{{ 'collections.policy_num' | translate }}: {{ collection.display_name }}</h4> 
+                </ion-label>
+               </ion-col>
+               <ion-col>
+                <ion-label> 
+                  <h4>الحالة: {{ collection.policy_status }}</h4> 
+                </ion-label>
+               </ion-col>
+             </ion-row>
+           </ion-grid>
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col>
+                <ion-label> <h4>{{ 'collections.customer' | translate }}: {{ collection.customer[1] }}</h4> </ion-label>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <ion-label>الاجمالى: {{ collection.gross_premium }} </ion-label>
+              </ion-col>
+              <ion-col>
+                <ion-label>صافى القيمة: {{ collection.net_premium }} </ion-label>
+              </ion-col>
+            </ion-row>
+
+            <div class="is-divider"></div>
+            <ion-row>
+              <ion-col no-padding>
+                <ion-label class="__app_link" ><h4 class="collection_date">{{ 'collections.renwal_date' | translate }}: {{ collection.start_date }}</h4></ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+
+        
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>

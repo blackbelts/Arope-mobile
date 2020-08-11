@@ -1,0 +1,74 @@
+
+  <form #f="ngForm" >
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">{{ 'indi.Zone' | translate }} <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-select  required>
+              <ion-select-option *ngFor="let zone of zones" [value]="zone.value">{{ zone.viewValue }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">{{ 'indi.Date of Birthday' | translate }} <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input name="dob" [ngModel]="listDates" #dob="ngModel" (click)="onOpenAdditionTravelers()"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">{{ 'indi.Coverage From' | translate }} <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-datetime 
+                      display-format="MMM DD YYYY" 
+                      picker-format="YYYY MMM DD"
+                     ></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">{{ 'indi.Period' | translate }} <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-select  required>
+              <ion-select-option *ngFor="let period of periods" [value]="period.value">{{ period.viewValue }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+        <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">{{ 'indi.Coverage To' | translate }} <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-datetime 
+                      display-format="MMM DD YYYY" 
+                      picker-format="YYYY MMM DD"
+                     ></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-checkbox color="primary"  slot="start"></ion-checkbox>
+            <ion-label>{{ 'indi.I confirm that i am a resident in Egypt' | translate }}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+  </ion-grid>
+  </form>
+

@@ -1,0 +1,46 @@
+<ion-toolbar color="primary">
+
+
+  <ion-buttons  slot="start" class="menu-icon" *ngIf="!mode">
+    <ion-menu-button ></ion-menu-button>
+</ion-buttons>
+
+<ion-buttons slot="start" *ngIf="mode">
+  <ion-back-button [defaultHref]="hrefBack"></ion-back-button>
+  </ion-buttons>
+
+  <ion-title>
+     {{ title }}
+  </ion-title>
+
+  <ion-buttons slot="end">
+
+<!-- 
+    <ion-button class="ion-no-padding">
+     
+          <ion-icon name="chatbubbles"></ion-icon>
+      
+    </ion-button> -->
+
+    <ion-button (click)="popoverNotifi($event)">
+      
+          <ion-icon name="notifications"></ion-icon>
+       
+    </ion-button>
+
+    <ion-button (click)="showPopover($event)">
+    
+        <ion-icon name="person"></ion-icon>
+     
+     
+        <ion-icon name="arrow-dropdown"></ion-icon>
+     
+    </ion-button>
+
+
+
+   
+  </ion-buttons>
+
+
+</ion-toolbar>

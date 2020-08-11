@@ -1,0 +1,19 @@
+<ion-list>
+  <ion-list-header>
+    <ion-text color="primary" >
+      <h4>{{ "header.Your Profile" | translate }}</h4>
+    </ion-text>
+  </ion-list-header>
+  <ion-item button [routerLink]="['/', 'auth', 'profile', 'edit-profile']">
+    <ion-icon name="create" slot="start"  color="primary"></ion-icon>
+    <ion-label>{{ "header.Edit Profile" | translate }}</ion-label>
+  </ion-item>
+  <ion-item button>
+    <ion-icon name="cog" slot="start" color="primary"></ion-icon>
+    <ion-label>{{ "header.Settings" | translate }}</ion-label>
+  </ion-item>
+  <ion-item lines="none" detail="false" button>
+    <ion-icon name="log-out" slot="start"  color="primary"></ion-icon>
+    <ion-label>{{ "header.Sign Out" | translate }}</ion-label>
+  </ion-item>
+</ion-list>

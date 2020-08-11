@@ -1,0 +1,50 @@
+<ion-header>
+  <app-top-header [title]="title" [mode]="false" [hrefBack]="''"></app-top-header>
+  
+  <ion-toolbar color="light">
+    <ion-segment (ionChange)="onChange($event)">
+      <ion-segment-button value="individual" [checked]="isShow === 'individual'">
+        <ion-label>{{ 'travel.individual' | translate }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="family"  [checked]="isShow === 'family'">
+        <ion-label>{{ 'travel.family' | translate }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="group"  [checked]="isShow === 'group'">
+        <ion-label>{{ "travel.group" | translate }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+  
+  <!-- All Component relative to travel insurance -->
+
+  <ion-content>
+
+    <form [formGroup]="form">
+
+      <app-individual [form]="form" *ngIf="isShow === 'individual'"></app-individual>
+      <app-family *ngIf="isShow === 'family'"></app-family>
+      <app-group *ngIf="isShow === 'group'"></app-group>
+
+    </form>
+
+  </ion-content>
+
+ 
+  <ion-footer >
+    <ion-toolbar color="light">
+      <ion-button color="primary" expand="block" size="large" (click)="onSubmit()" [disabled]="!form.valid" *ngIf="!isLoading">
+        {{ 'travel.Get A Quote' | translate }}
+        
+        <ion-icon name="paper-plane" slot="end"></ion-icon>
+      </ion-button>
+      <ion-button color="primary" expand="block" size="large" *ngIf="isLoading">
+
+        <ion-spinner name="crescent"></ion-spinner>
+      </ion-button>
+
+    
+
+    </ion-toolbar>
+  </ion-footer>
+  

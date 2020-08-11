@@ -1,0 +1,27 @@
+.accordion-item {
+   ion-card-content{
+    max-height: 0px;
+    padding-bottom: 0px;
+   }
+}
+
+.accordion-item:first-child {
+   ion-card-content {
+    max-height: 500px;
+    padding-bottom: 13px;
+   }
+}
+
+
+.title-card {
+    text-decoration: underline;
+}
+
+.is-active {
+    transition: all 0.5s;
+
+    ion-icon {
+        transform: rotate(180deg);
+        transition: all 0.5s;
+    }
+}

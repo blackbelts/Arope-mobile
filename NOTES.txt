@@ -1,0 +1,22 @@
+// Tasks 21/6
+
+- Header component [Done]
+
+- Finish Quatation (Design)
+
+- Finish login system (REST API)
+
+- Translation App from English To Arabic
+
+- Profile User
+
+
+// 2ed day 
+
+- Finsih insurance info design [Done]
+- faimly design with modal(additional travelers) [Done]
+- edit Profile design [Done]
+
+
+- translation
+- REST API

@@ -1,0 +1,37 @@
+<ion-header>
+  <app-top-header [title]="'Individual Travel'" [mode]="false" [hrefBack]="''"></app-top-header>
+  
+  <ion-toolbar color="light">
+    <ion-segment (ionChange)="onChange($event)">
+      <ion-segment-button value="individual" [checked]="isShow === 'individual'">
+        <ion-label>individual</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="family"  [checked]="isShow === 'family'">
+        <ion-label>family</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="group"  [checked]="isShow === 'group'">
+        <ion-label>group</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+  
+  <!-- All Component relative to travel insurance -->
+
+  <ion-content>
+
+    <app-individual *ngIf="isShow === 'individual'"></app-individual>
+    <app-family *ngIf="isShow === 'family'"></app-family>
+    <app-group *ngIf="isShow === 'group'"></app-group>
+    </ion-content>
+
+ 
+  <ion-footer >
+    <ion-toolbar color="light">
+      <ion-button color="primary" expand="block" (click)="onClick()">Get A Quote
+        
+        <ion-icon name="paper-plane" slot="end"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+  

@@ -1,0 +1,44 @@
+
+<ion-header>
+  <app-top-header [title]="title" [mode]="true" [hrefBack]="'/dashboard/yourdashboard'"></app-top-header>
+</ion-header>
+
+
+  <super-tabs >
+    <super-tabs-toolbar slot="top" color="primary" >
+      <super-tab-button color="light" tabTitle="page1">
+        <ion-label>{{ 'prod.Customers' | translate }}</ion-label>
+      </super-tab-button>  
+      <super-tab-button>
+        <ion-label>{{ "prod.LOB" | translate }}</ion-label>
+      </super-tab-button>  
+      <super-tab-button>
+        <ion-label>{{ 'prod.Net Premium' | translate }}</ion-label>
+      </super-tab-button>  
+    </super-tabs-toolbar>
+
+    <super-tabs-container>
+      <super-tab  tabTitle="page1">
+        <ion-content>
+          <ion-nav  [root]="customerPage" #customerNav></ion-nav>
+        </ion-content>
+      </super-tab>
+
+      <super-tab>
+        <ion-content>
+          {{ "prod.package number" | translate }}
+        </ion-content>
+      </super-tab>
+
+      <super-tab>
+        <ion-content>
+            {{ "prod.Net Permium" | translate }}
+        </ion-content>
+      </super-tab>
+
+
+    </super-tabs-container>
+
+
+</super-tabs>
+
